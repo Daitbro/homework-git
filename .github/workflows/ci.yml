@@ -1,0 +1,26 @@
+name: CI - Проверка клонирования
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: List files
+        run: ls -la
+      
+      - name: Check index.html exists
+        run: |
+          if [ -f "index.html" ]; then
+            echo "✅ index.html найден"
+          else
+            echo "❌ index.html не найден"
+            exit 1
+          fi

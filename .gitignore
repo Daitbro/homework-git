@@ -1,0 +1,13 @@
+# Зависимости
+node_modules/
+
+# Временные файлы ОС
+.DS_Store
+Thumbs.db
+
+# Конфиденциальные данные
+.env
+secrets.yml
+
+# Логи
+*.log
